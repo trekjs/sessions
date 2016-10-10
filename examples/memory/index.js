@@ -4,7 +4,6 @@ const Engine = require('trek-engine')
 const sessions = require('../..')
 
 async function start (port = 3000) {
-
   const app = new Engine()
 
   app.config.set('cookie', {
@@ -18,11 +17,11 @@ async function start (port = 3000) {
     }
   }))
 
-  app.use((ctx, next) => {
+  app.use(ctx => {
     ctx.res.body = ctx.session
   })
 
-  app.run(port)
+  await app.run(port)
 }
 
 start().catch(console.error)
