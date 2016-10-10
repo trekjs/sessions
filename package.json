@@ -1,0 +1,83 @@
+{
+  "name": "trek-sessions",
+  "version": "0.0.0",
+  "description": "Sessions middleware",
+  "license": "MIT",
+  "repository": "trekjs/sessions",
+  "author": {
+    "name": "Fangdun Cai",
+    "email": "cfddream@gmail.com",
+    "url": "fundon.me"
+  },
+  "keywords": [
+    "trek",
+    "middleware",
+    "sessions",
+    "session",
+    "cookie"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "async-to-gen lib --out-dir dist",
+    "lint": "xo",
+    "test": "xo && nyc --reporter=lcov ava --no-cache -r babel-register -c 5"
+  },
+  "dependencies": {
+    "crc": "3.4.0"
+  },
+  "devDependencies": {
+    "async-to-gen": "1",
+    "ava": "0",
+    "babel-plugin-transform-async-to-generator": "6",
+    "babel-plugin-transform-es2015-modules-commonjs": "6",
+    "babel-preset-es2015": "6",
+    "babel-register": "6",
+    "nyc": "8",
+    "trek-engine": "0.4.5",
+    "xo": "0"
+  },
+  "babel": {
+    "plugins": [
+      "transform-async-to-generator",
+      "transform-es2015-modules-commonjs"
+    ],
+    "presets": [
+      "es2015"
+    ]
+  },
+  "xo": {
+    "esnext": true,
+    "envs": [
+      "node",
+      "es6"
+    ],
+    "semicolon": false,
+    "space": true,
+    "ignores": [],
+    "rules": {
+      "babel/arrow-parens": [
+        2,
+        "as-needed"
+      ],
+      "babel/object-curly-spacing": 0,
+      "curly": 0,
+      "import/no-named-as-default": 0,
+      "max-lines": 0,
+      "no-warning-comments": [
+        "error",
+        {
+          "terms": [
+            "todo",
+            "fixme"
+          ],
+          "location": "anywhere"
+        }
+      ],
+      "space-before-function-paren": [
+        2,
+        "always"
+      ],
+      "yoda": 0
+    }
+  }
+}
