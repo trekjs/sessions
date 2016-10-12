@@ -29,6 +29,7 @@
     "async-to-gen": "1",
     "ava": "0.16",
     "babel-plugin-transform-async-to-generator": "6",
+    "babel-plugin-transform-es2015-modules-commonjs": "6",
     "babel-preset-es2016": "6",
     "babel-register": "6",
     "nyc": "8.3",
@@ -37,7 +38,8 @@
   },
   "babel": {
     "plugins": [
-      "transform-async-to-generator"
+      "transform-async-to-generator",
+      "transform-es2015-modules-commonjs"
     ],
     "presets": [
       "es2016"
@@ -54,6 +56,7 @@
     "ignores": [],
     "rules": {
       "curly": 0,
+      "import/no-dynamic-require": 0,
       "import/no-named-as-default": 0,
       "max-lines": 0,
       "no-warning-comments": [
