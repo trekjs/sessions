@@ -27,22 +27,20 @@
   },
   "devDependencies": {
     "async-to-gen": "1",
-    "ava": "0",
+    "ava": "0.16",
     "babel-plugin-transform-async-to-generator": "6",
-    "babel-plugin-transform-es2015-modules-commonjs": "6",
-    "babel-preset-es2015": "6",
+    "babel-preset-es2016": "6",
     "babel-register": "6",
-    "nyc": "8",
+    "nyc": "8.3",
     "trek-engine": "0.4.5",
-    "xo": "0"
+    "xo": "0.17"
   },
   "babel": {
     "plugins": [
-      "transform-async-to-generator",
-      "transform-es2015-modules-commonjs"
+      "transform-async-to-generator"
     ],
     "presets": [
-      "es2015"
+      "es2016"
     ]
   },
   "xo": {
@@ -55,11 +53,6 @@
     "space": true,
     "ignores": [],
     "rules": {
-      "babel/arrow-parens": [
-        2,
-        "as-needed"
-      ],
-      "babel/object-curly-spacing": 0,
       "curly": 0,
       "import/no-named-as-default": 0,
       "max-lines": 0,
@@ -71,6 +64,14 @@
             "fixme"
           ],
           "location": "anywhere"
+        }
+      ],
+      "object-curly-spacing": [
+        "error",
+        "always",
+        {
+          "arraysInObjects": true,
+          "objectsInObjects": true
         }
       ],
       "space-before-function-paren": [

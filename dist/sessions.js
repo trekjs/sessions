@@ -43,7 +43,7 @@ module.exports = class Sessions {
     }
 
     this.store = new Store(this.provider, {
-      expires: cookie.maxAge || (cookies.expires && cookies.expires - Date.now()),
+      expires: cookie.maxAge || (cookie.expires && cookie.expires - Date.now()),
       prefix: this.prefix
     })
   }
@@ -61,12 +61,12 @@ module.exports = class Sessions {
     let isNew = false
     let session
 
-    if (!sessionId) {
+    if (sessionId) {
+      session = yield this.store.get(sessionId)
+    } else {
       sessionId = yield this.generateId(this.cookieLength)
       session = yield this.store.generate(this.cookie)
       isNew = true
-    } else {
-      session = yield this.store.get(sessionId)
     }
 
     if (!session || (this.verify && !this.verify(req, session))) {
