@@ -1,6 +1,6 @@
 {
   "name": "trek-sessions",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Sessions middleware",
   "license": "MIT",
   "repository": "trekjs/sessions",
@@ -16,7 +16,7 @@
     "session",
     "cookie"
   ],
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "async-to-gen lib --out-dir dist",
     "lint": "xo",
@@ -33,7 +33,8 @@
     "babel-preset-es2016": "6",
     "babel-register": "6",
     "nyc": "8.3",
-    "trek-engine": "0.4.5",
+    "redis": "2.6",
+    "trek-engine": "0.5",
     "xo": "0.17"
   },
   "babel": {

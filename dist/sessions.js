@@ -5,6 +5,14 @@ const Store = require('./store')
 const Memory = require('./memory')
 const uid = require('./uid')
 
+/**
+ * Warning message for `Memory Provider` usage in production.
+ */
+
+const warning = `Warning: trek-sessions\' Memory Provider is not
+  designed for a production environment, as it will leak
+  memory, and will not scale past a single process.`
+
 const cookieDefaults = {
   httpOnly: true,
   path: '/',
@@ -19,6 +27,7 @@ const defaults = {
   generateId: undefined,
   cookie: cookieDefaults,
   cookieLength: 24,
+  rolling: false,
   verify: false,
   provider: null
 }
@@ -36,7 +45,10 @@ module.exports = class Sessions {
     const { generateId, provider, verify, cookie } = this
 
     if (!generateId) this.generateId = uid
-    if (!provider) this.provider = new Memory()
+    if (!provider) {
+      if ('production'.startsWith(process.env.NODE_ENV)) console.warn(warning)
+        this.provider = new Memory()
+    }
 
     if (false !== verify && 'function' !== typeof verify) {
       throw new TypeError('option detect must be function')
@@ -48,12 +60,14 @@ module.exports = class Sessions {
     })
   }
 
-  process (ctx) {return __async(function*(){
+  process (ctx, next) {return __async(function*(){
     const result = yield this.get(ctx)
+    ctx.session = result.session
+    ctx.sessionId = result.sessionId
 
-    yield this.refresh(ctx.cookies, result)
+    yield next()
 
-    return result
+    return yield this.refresh(ctx.cookies, result)
   }.call(this))}
 
   get ({ req, cookies }) {return __async(function*(){
@@ -65,13 +79,13 @@ module.exports = class Sessions {
       session = yield this.store.get(sessionId)
     } else {
       sessionId = yield this.generateId(this.cookieLength)
-      session = yield this.store.generate(this.cookie)
+      session = yield this.store.touch(this.cookie)
       isNew = true
     }
 
     if (!session || (this.verify && !this.verify(req, session))) {
       sessionId = yield this.generateId(this.cookieLength)
-      session = yield this.store.generate(this.cookie)
+      session = yield this.store.touch(this.cookie)
       isNew = true
       // reset cookie
       cookies.set(this.key, null)
@@ -96,10 +110,15 @@ module.exports = class Sessions {
       return
     }
 
-    if (!originalHash) {
-      cookies.set(this.key, sessionId, this.cookie)
-      yield this.store.set(sessionId, session)
+    const newHash = hash(session)
+    // rolling session will always reset cookie and session
+    if (!this.rolling && newHash === originalHash) {
+      // session not modified
+      return
     }
+
+    cookies.set(this.key, sessionId, this.cookie)
+    yield this.store.set(sessionId, session)
   }.call(this))}
 
 }

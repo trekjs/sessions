@@ -17,7 +17,7 @@ module.exports = class Store extends Emitter {
     })
   }
 
-  generate (cookie) {
+  touch (cookie) {
     cookie = Object.assign({}, cookie)
     if (!cookie.expires && cookie.maxAge) {
       cookie.expires = new Date(Date.now() + cookie.maxAge)

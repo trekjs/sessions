@@ -18,6 +18,11 @@ async function start (port = 3000) {
   }))
 
   app.use(ctx => {
+    if (ctx.session.count) {
+      ctx.session.count++
+    } else {
+      ctx.session.count = 1
+    }
     ctx.res.body = ctx.session
   })
 
