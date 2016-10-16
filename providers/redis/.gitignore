@@ -1,0 +1,10 @@
+node_modules
+.nyc_output
+coverage
+.DS_Store
+*.swp
+node_modules
+npm-debug.log
+coverage
+.nyc_output
+*-v8.log
