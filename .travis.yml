@@ -9,6 +9,10 @@ addons:
 services:
   - redis-server
 
+cache:
+  directories:
+    - node_modules
+
 sudo: false
 language: node_js
 node_js:
