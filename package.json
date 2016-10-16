@@ -61,9 +61,7 @@
     ],
     "semicolon": false,
     "space": true,
-    "ignores": [
-      "providers/**"
-    ],
+    "ignores": [],
     "rules": {
       "curly": 0,
       "import/no-dynamic-require": 0,
