@@ -1,6 +1,6 @@
 {
   "name": "trek-sessions",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Sessions middleware",
   "license": "MIT",
   "repository": "trekjs/sessions",
@@ -31,7 +31,8 @@
     "test": "xo && nyc --reporter=lcov ava --no-cache -r babel-register -c 5"
   },
   "dependencies": {
-    "crc": "3.4.0"
+    "crc": "3.4.0",
+    "sessions-provider-memory": "0.0.3"
   },
   "devDependencies": {
     "async-to-gen": "1",
@@ -41,6 +42,7 @@
     "babel-preset-es2016": "6",
     "babel-register": "6",
     "nyc": "8.3",
+    "sessions-provider-redis": "0.0.2",
     "trek-engine": "0.5",
     "xo": "0.17"
   },
