@@ -34,18 +34,17 @@ test('should clear all sessions', async t => {
   })
 
   const url = await listen(app)
-  const res = await request({ url, json: true })
+  let res = await request({ url, json: true })
   t.is(res.count, 1)
 
-  /*
   const jar = request.jar()
   res = await request({ url, jar, json: true })
   t.is(res.count, 1)
 
-  res = await request({ url, jar, json: true })
-  t.is(res.count, 2)
+  res = await request({ url: url + '/clear', jar, json: true })
+  t.is(res, undefined)
 
   res = await request({ url, jar, json: true })
-  t.is(res.count, 3)
-  */
+  t.is(res.count, 1)
 })
+
