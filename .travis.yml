@@ -1,8 +1,19 @@
+env:
+  - NVM_NODEJS_ORG_MIRROR=https://nodejs.org/download/nightly
+  - CXX=g++-4.8 TRAVIS=true
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.8
+services:
+  - redis-server
+
 sudo: false
 language: node_js
 node_js:
-  - "6"
-
+  - "7"
 script:
   - npm test
 after_script:

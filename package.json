@@ -27,8 +27,9 @@
   ],
   "main": "lib/index.js",
   "scripts": {
+    "ava": "./test/helpers/cli.js --no-cache -r babel-register -c 5",
     "lint": "xo",
-    "test": "xo && nyc --reporter=lcov ava --no-cache -r babel-register -c 5"
+    "test": "xo && nyc npm run ava"
   },
   "dependencies": {
     "crc": "3.4.0",
@@ -95,5 +96,11 @@
       ],
       "yoda": 0
     }
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ]
   }
 }
