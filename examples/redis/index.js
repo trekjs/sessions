@@ -1,8 +1,8 @@
 'use strict'
 
 const Engine = require('trek-engine')
-const sessions = require('../..')
 const RedisProvider = require('sessions-provider-redis')
+const sessions = require('../..')
 
 async function start (port = 3000) {
   const app = new Engine()

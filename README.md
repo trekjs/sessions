@@ -45,6 +45,55 @@ start().catch(console.error)
 
 ## API
 
+### `Sessions`
+
+
+### `Store`
+
+> Map like
+
+```js
+const store = new Store(provider, {
+  exports: 86400,
+  prefix: 'trek:sess:'
+})
+```
+
+* `provider`
+
+    The `sessions` are storing on the `provider`.
+
+* `touch(cookie)`
+
+    Retures a `session`.
+
+* `previx(sid)`
+
+    Adds a prefix to `sid`.
+
+* `async clear()`
+
+    Removes all sessions.
+
+* `async delete(sid)`
+
+    Removes a `session` by the `sid`.
+
+* `async has(sid)`
+
+    Returns a boolean asserting whether a `session` has been associated to the `sid` in the `store` or not.
+
+* `async get(sid)`
+
+    Returns the `session` associated to the `sid`, or `undefined` if there is none.
+
+* `async set(sid, sess)`
+
+    Sets the `session` for the `sid` in the store.
+
+
+### `Provider`
+
 
 
 ## Badges
