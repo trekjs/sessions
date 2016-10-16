@@ -28,7 +28,7 @@
   "main": "lib/index.js",
   "scripts": {
     "lint": "xo",
-    "test": "xo && nyc ./test/helpers/cli.js --no-cache -r babel-register -c 5"
+    "test": "xo && nyc node --harmony-async-await ./node_modules/.bin/ava --no-cache -r babel-register -c 5"
   },
   "dependencies": {
     "crc": "3.4.0",
