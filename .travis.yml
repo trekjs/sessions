@@ -1,6 +1,5 @@
 env:
-  - NVM_NODEJS_ORG_MIRROR=https://nodejs.org/download/nightly
-  - CXX=g++-4.8 TRAVIS=true
+  - CXX=g++-4.8 TRAVIS=true NVM_NODEJS_ORG_MIRROR=https://nodejs.org/download/nightly
 addons:
   apt:
     sources:
