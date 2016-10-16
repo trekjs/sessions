@@ -1,6 +1,6 @@
 {
   "name": "sessions-provider-redis",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Sessions provider redis",
   "license": "MIT",
   "repository": "trekjs/sessions-provider-redis",
@@ -9,18 +9,27 @@
     "email": "cfddream@gmail.com",
     "url": "trekjs.com"
   },
+  "keywords": [
+    "trek",
+    "sessions",
+    "provider",
+    "redis"
+  ],
   "engines": {
     "node": ">=6"
   },
   "files": [
+    "LICENSE",
+    "CHANGELOG.md",
+    "README.md",
     "index.js"
   ],
+  "main": "index.js",
   "scripts": {
     "lint": "xo",
     "test": "xo && nyc ava --no-cache -r babel-register -c 5",
     "test:watch": "xo && nyc ava -r babel-register --watch"
   },
-  "main": "index.js",
   "dependencies": {
     "fast-json-parse": "1.0.2",
     "fast-safe-stringify": "1.1.1",

@@ -1,6 +1,6 @@
 {
   "name": "trek-sessions",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Sessions middleware",
   "license": "MIT",
   "repository": "trekjs/sessions",
@@ -16,9 +16,17 @@
     "session",
     "cookie"
   ],
+  "engines": {
+    "node": ">=6"
+  },
+  "files": [
+    "LICENSE",
+    "CHANGELOG.md",
+    "README.md",
+    "lib/"
+  ],
   "main": "lib/index.js",
   "scripts": {
-    "build": "async-to-gen lib --out-dir dist",
     "lint": "xo",
     "test": "xo && nyc --reporter=lcov ava --no-cache -r babel-register -c 5"
   },
@@ -33,7 +41,6 @@
     "babel-preset-es2016": "6",
     "babel-register": "6",
     "nyc": "8.3",
-    "redis": "2.6",
     "trek-engine": "0.5",
     "xo": "0.17"
   },
@@ -54,7 +61,9 @@
     ],
     "semicolon": false,
     "space": true,
-    "ignores": [],
+    "ignores": [
+      "providers/**"
+    ],
     "rules": {
       "curly": 0,
       "import/no-dynamic-require": 0,
