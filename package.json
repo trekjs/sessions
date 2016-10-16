@@ -27,9 +27,8 @@
   ],
   "main": "lib/index.js",
   "scripts": {
-    "ava": "./test/helpers/cli.js --no-cache -r babel-register -c 5",
     "lint": "xo",
-    "test": "xo && nyc npm run ava"
+    "test": "xo && nyc ./test/helpers/cli.js --no-cache -r babel-register -c 5"
   },
   "dependencies": {
     "crc": "3.4.0",
