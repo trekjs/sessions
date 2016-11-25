@@ -1,9 +1,9 @@
 {
   "name": "trek-sessions",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Sessions middleware",
-  "license": "MIT",
   "repository": "trekjs/sessions",
+  "license": "MIT",
   "author": {
     "name": "Fangdun Cai",
     "email": "cfddream@gmail.com",
@@ -28,20 +28,20 @@
   "main": "lib/index.js",
   "scripts": {
     "lint": "xo",
-    "test": "xo && nyc node --harmony-async-await ./node_modules/.bin/ava --no-cache -r babel-register -c 5"
+    "test": "xo && nyc node --harmony-async-await ./node_modules/.bin/ava"
   },
   "dependencies": {
-    "crc": "3.4.0",
+    "crc": "3.4.3",
     "sessions-provider-memory": "0.0.3"
   },
   "devDependencies": {
     "async-to-gen": "1",
-    "ava": "0.16",
+    "ava": "0.17",
     "babel-plugin-transform-async-to-generator": "6",
     "babel-plugin-transform-es2015-modules-commonjs": "6",
     "babel-preset-es2016": "6",
     "babel-register": "6",
-    "nyc": "8.3",
+    "nyc": "10",
     "request": "2",
     "request-promise": "4",
     "sessions-provider-redis": "0.0.2",
@@ -56,6 +56,10 @@
     "presets": [
       "es2016"
     ]
+  },
+  "ava": {
+    "concurrency": 5,
+    "require": "babel-register"
   },
   "xo": {
     "esnext": true,
