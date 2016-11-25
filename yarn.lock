@@ -1677,9 +1677,9 @@ fast-levenshtein@~2.0.4:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.5.tgz#bd33145744519ab1c36c3ee9f31f08e9079b67f2"
 
-fast-safe-stringify@1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/fast-safe-stringify/-/fast-safe-stringify-1.1.1.tgz#9560965c0b2b60b2ef93c7a405c65731d7f62b23"
+fast-safe-stringify@1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/fast-safe-stringify/-/fast-safe-stringify-1.1.3.tgz#f23370808fe5ab243fa1fdee2e9ab3041c8cb884"
 
 figures@^1.3.5, figures@^1.4.0:
   version "1.7.0"
@@ -3191,10 +3191,11 @@ read-pkg@^2.0.0:
     normalize-package-data "^2.3.2"
     path-type "^2.0.0"
 
-readable-stream@^2.0.0, "readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@~2.0.0:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.0.6.tgz#8f90341e68a53ccc928788dacfcd11b36eb9b78e"
+readable-stream@^2.0.0, "readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.0.5, readable-stream@~2.1.4:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.1.5.tgz#66fa8b720e1438b364681f2ad1a63c618448c9d0"
   dependencies:
+    buffer-shims "^1.0.0"
     core-util-is "~1.0.0"
     inherits "~2.0.1"
     isarray "~1.0.0"
@@ -3202,11 +3203,10 @@ readable-stream@^2.0.0, "readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.
     string_decoder "~0.10.x"
     util-deprecate "~1.0.1"
 
-readable-stream@~2.1.4:
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.1.5.tgz#66fa8b720e1438b364681f2ad1a63c618448c9d0"
+readable-stream@^2.0.2, readable-stream@~2.0.0:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.0.6.tgz#8f90341e68a53ccc928788dacfcd11b36eb9b78e"
   dependencies:
-    buffer-shims "^1.0.0"
     core-util-is "~1.0.0"
     inherits "~2.0.1"
     isarray "~1.0.0"
@@ -3252,9 +3252,9 @@ redis-parser@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/redis-parser/-/redis-parser-2.2.0.tgz#4a01e162af66bd6eae7e6c291f9e25cb430351fa"
 
-redis@2.6.2:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/redis/-/redis-2.6.2.tgz#7ccab0563013ac619e7dd84c6512b81d3d852579"
+redis@2.6.3:
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/redis/-/redis-2.6.3.tgz#84305b92553c6a1f09c7c47c30b11ace7dbb7ad4"
   dependencies:
     double-ended-queue "^2.1.0-0"
     redis-commands "^1.2.0"
@@ -3442,13 +3442,13 @@ sessions-provider-memory@0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/sessions-provider-memory/-/sessions-provider-memory-0.0.3.tgz#4b790ccb970db6f98702fd1325271f8a21582613"
 
-sessions-provider-redis@0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/sessions-provider-redis/-/sessions-provider-redis-0.0.2.tgz#ee4bfea158e20ff1fc75af1f128baa4447405f0f"
+sessions-provider-redis@0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/sessions-provider-redis/-/sessions-provider-redis-0.0.3.tgz#b393b63164a8bb9dae46f64085b9fd61fcccfb54"
   dependencies:
     fast-json-parse "1.0.2"
-    fast-safe-stringify "1.1.1"
-    redis "2.6.2"
+    fast-safe-stringify "1.1.3"
+    redis "2.6.3"
 
 set-blocking@^2.0.0, set-blocking@~2.0.0:
   version "2.0.0"

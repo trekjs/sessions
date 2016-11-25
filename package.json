@@ -44,7 +44,7 @@
     "nyc": "10",
     "request": "2",
     "request-promise": "4",
-    "sessions-provider-redis": "0.0.2",
+    "sessions-provider-redis": "0.0.3",
     "trek-engine": "0.5",
     "xo": "0.17"
   },
