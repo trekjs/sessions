@@ -1,6 +1,6 @@
 {
   "name": "trek-sessions",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Sessions middleware",
   "repository": "trekjs/sessions",
   "license": "MIT",
@@ -31,7 +31,7 @@
     "test": "xo && nyc node --harmony-async-await ./node_modules/.bin/ava"
   },
   "dependencies": {
-    "crc": "3.4.3",
+    "crc": "3.4.4",
     "sessions-provider-memory": "0.0.3"
   },
   "devDependencies": {
