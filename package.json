@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "async-to-gen": "1",
-    "ava": "0.17",
+    "ava": "0.18",
     "babel-plugin-transform-async-to-generator": "6",
     "babel-plugin-transform-es2015-modules-commonjs": "6",
     "babel-preset-es2016": "6",
@@ -44,7 +44,7 @@
     "nyc": "10",
     "request": "2",
     "request-promise": "4",
-    "sessions-provider-redis": "0.0.3",
+    "sessions-provider-redis": "0",
     "trek-engine": "0.5",
     "xo": "0.17"
   },
