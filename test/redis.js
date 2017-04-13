@@ -7,6 +7,7 @@ import sessions from '..'
 
 test('should clear all sessions', async t => {
   const app = new Engine()
+  const provider = new RedisProvider()
 
   app.config.set('cookie', {
     keys: ['trek', 'engine']
@@ -17,7 +18,8 @@ test('should clear all sessions', async t => {
       signed: false,
       maxAge: 60 * 1000 // 1 minutes
     },
-    provider: new RedisProvider()
+    provider,
+    shouldBeDeleted: 1
   }))
 
   app.use(async ctx => {
@@ -28,7 +30,14 @@ test('should clear all sessions', async t => {
     }
     if (ctx.req.path === '/clear') {
       ctx.session = null
+
+      let has = await ctx.sessions.store.has(ctx.sessionId)
+      t.is(has, 1)
+
       await ctx.sessions.store.clear()
+
+      has = await ctx.sessions.store.has(ctx.sessionId)
+      t.is(has, 0)
     }
     ctx.res.body = ctx.session
   })
@@ -47,4 +56,3 @@ test('should clear all sessions', async t => {
   res = await request({ url, jar, json: true })
   t.is(res.count, 1)
 })
-

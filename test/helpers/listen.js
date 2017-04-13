@@ -1,6 +1,6 @@
 module.exports = app => {
   return new Promise((resolve, reject) => {
-    app.run(function (err) {
+    app.server = app.run(function (err) {
       if (err) {
         return reject(err)
       }
