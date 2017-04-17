@@ -3342,9 +3342,9 @@ semver-diff@^2.0.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
 
-sessions-provider-memory@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/sessions-provider-memory/-/sessions-provider-memory-0.1.0.tgz#6ba94ac12522dd72b0a34ac6846b4e92689768f2"
+sessions-provider-memory@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/sessions-provider-memory/-/sessions-provider-memory-0.1.1.tgz#986b6f29acf8beef663a5933460bfe3fb53ba330"
 
 sessions-provider-redis@0:
   version "0.0.7"
