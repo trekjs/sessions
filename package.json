@@ -40,6 +40,7 @@
     "nyc": "10",
     "request": "2",
     "request-promise": "4",
+    "sessions-provider-mongodb": "0",
     "sessions-provider-redis": "0",
     "trek-engine": "1",
     "xo": "0.18"
