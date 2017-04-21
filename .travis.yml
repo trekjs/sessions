@@ -1,11 +1,18 @@
+sudo: false
+language: node_js
+node_js:
+  - "7"
 env:
-  - CXX=g++-4.8 TRAVIS=true
+  - CXX=g++-4.8
 addons:
   apt:
     sources:
-    - ubuntu-toolchain-r-test
+      - mongodb-upstart
+      - ubuntu-toolchain-r-test
     packages:
-    - g++-4.8
+      - mongodb-org-server
+      - g++-4.8
+
 services:
   - redis-server
 
@@ -13,10 +20,6 @@ cache:
   directories:
     - node_modules
 
-sudo: false
-language: node_js
-node_js:
-  - "7"
 script:
   - npm test
 after_script:
