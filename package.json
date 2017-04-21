@@ -1,6 +1,6 @@
 {
   "name": "trek-sessions",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Sessions middleware",
   "repository": "trekjs/sessions",
   "license": "MIT",
