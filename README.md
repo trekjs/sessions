@@ -54,7 +54,7 @@ start().catch(console.error)
 
 ```js
 const store = new Store(provider, {
-  exports: 86400,
+  expires: 86400,
   prefix: 'trek:sess:'
 })
 ```
@@ -62,10 +62,6 @@ const store = new Store(provider, {
 * `provider`
 
     The `sessions` are storing on the `provider`.
-
-* `touch(cookie)`
-
-    Retures a `session`.
 
 * `previx(sid)`
 
