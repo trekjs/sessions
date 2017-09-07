@@ -4,20 +4,22 @@ const Engine = require('trek-engine')
 const RedisProvider = require('sessions-provider-redis')
 const sessions = require('../..')
 
-async function start (port = 3000) {
+async function start(port = 3000) {
   const app = new Engine()
 
   app.config.set('cookie', {
     keys: ['trek', 'engine']
   })
 
-  app.use(await sessions({
-    cookie: {
-      signed: false,
-      maxAge: 60 * 1000 // 1 minutes
-    },
-    provider: new RedisProvider()
-  }))
+  app.use(
+    await sessions({
+      cookie: {
+        signed: false,
+        maxAge: 60 * 1000 // 1 minutes
+      },
+      provider: new RedisProvider()
+    })
+  )
 
   app.use(async ctx => {
     if (ctx.session.count) {

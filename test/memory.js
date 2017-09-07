@@ -11,12 +11,14 @@ test('should use memory provider', async t => {
     keys: ['trek', 'engine']
   })
 
-  app.use(sessions({
-    cookie: {
-      signed: false,
-      maxAge: 60 * 1000 // 1 minutes
-    }
-  }))
+  app.use(
+    sessions({
+      cookie: {
+        signed: false,
+        maxAge: 60 * 1000 // 1 minutes
+      }
+    })
+  )
 
   app.use(ctx => {
     if (ctx.session.count) {

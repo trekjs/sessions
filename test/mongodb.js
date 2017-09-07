@@ -13,14 +13,16 @@ test('should clear all sessions', async t => {
     keys: ['trek', 'engine']
   })
 
-  app.use(await sessions({
-    cookie: {
-      signed: false,
-      maxAge: 60 * 1000 // 1 minutes
-    },
-    provider,
-    shouldBeDeleted: 1
-  }))
+  app.use(
+    await sessions({
+      cookie: {
+        signed: false,
+        maxAge: 60 * 1000 // 1 minutes
+      },
+      provider,
+      shouldBeDeleted: 1
+    })
+  )
 
   app.use(async ctx => {
     if (ctx.session.count) {
